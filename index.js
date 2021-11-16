@@ -40,7 +40,6 @@ async function run() {
     // insert a new product to database
     app.post("/products", async (req, res) => {
       const product = req.body;
-      console.log(product);
       const result = await productCollection.insertOne(product);
       console.log(result);
       res.json(result);
@@ -150,10 +149,10 @@ async function run() {
 run().catch(console.dir);
 
 app.get("/", (req, res) => {
-  res.send("Hello Car Market");
+  res.send("Hello Camera Market");
 });
 
-const port = process.env.PORT || 400;
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
   console.log("Server running on port", port);
